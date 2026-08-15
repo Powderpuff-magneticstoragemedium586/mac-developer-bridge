@@ -13,6 +13,7 @@ node_modules/
 *.tmp
 
 # Local configuration and secrets
+.agents/
 .env
 .env.*
 !.env.example

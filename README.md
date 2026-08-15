@@ -1,14 +1,64 @@
 # Mac Developer Bridge
 
+### Give ChatGPT a real terminal on your Mac.
+
 [![CI](https://github.com/alexanderradahl/mac-developer-bridge/actions/workflows/ci.yml/badge.svg)](https://github.com/alexanderradahl/mac-developer-bridge/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+Mac Developer Bridge turns a ChatGPT conversation into the reasoning layer for your actual Mac. It can run shell commands, edit files, start interactive terminal sessions, manage long-running jobs, and read stored Codex threads without starting another Codex model turn.
+
+> **Example:** “Find the Codex session I was working on yesterday, inspect the live repo, fix CI, push the result, and tell me what changed.”
+
+That is the kind of workflow this project is built for.
 
 > [!WARNING]
 > Mac Developer Bridge deliberately gives an MCP client the effective permissions of your macOS user. It is **not sandboxed** and has no command or path allowlist. Read [SECURITY.md](SECURITY.md) before enabling it.
 
-Mac Developer Bridge is a local MCP server for giving ChatGPT unrestricted access to the host Mac through one of two transports (see Transports). It is designed for the specific case where ChatGPT should become the agent/orchestrator while retaining the practical machine access of a local Codex session configured with sandbox bypass or full access.
+## The idea
 
-The bridge itself makes no OpenAI model call. It exposes deterministic local tools over MCP; ChatGPT supplies the reasoning. Its Codex-history tools call read-only `codex app-server` methods and never call `turn/start`.
+ChatGPT has the reasoning. Your Mac has the source code, terminal, credentials, build tools, local services, and work in progress. Mac Developer Bridge connects the two over MCP without adding another model or agent loop in the middle.
+
+```mermaid
+flowchart LR
+    A[ChatGPT] -->|MCP| B[Mac Developer Bridge]
+    B --> C[Shell, Git and local CLIs]
+    B --> D[Filesystem]
+    B --> E[Real PTY sessions]
+    B --> F[Background jobs]
+    B --> G[Stored Codex history]
+    B --> H[Audit log and kill switch]
+```
+
+The bridge itself makes no OpenAI model call. It exposes deterministic local tools; ChatGPT supplies the reasoning. The Codex-history tools use read-only `codex app-server` methods and never call `turn/start`.
+
+### What this unlocks
+
+- Recover a stored Codex thread, inspect the repo it refers to, and continue the work from ChatGPT.
+- Run tests, builds, Git, package managers, database CLIs, AppleScript, and other tools already installed on your Mac.
+- Keep interactive shells and terminal programs alive through a real PTY instead of pretending stdin is a terminal.
+- Start long-running local jobs, inspect their logs later, and stop the whole process group.
+- Read and modify files anywhere your macOS user can access.
+
+This is intentionally different from a local coding agent. There is no second reasoning loop. ChatGPT remains the agent; the Mac is the execution environment.
+
+## Quick start
+
+For a personal ChatGPT account, the menu-bar app is the easiest path. You need macOS, Node.js 18+, `cloudflared`, a hostname/tunnel, and ChatGPT Developer mode.
+
+```bash
+git clone https://github.com/alexanderradahl/mac-developer-bridge.git
+cd mac-developer-bridge
+./menubar/build.sh
+open /Applications/MacDevBridge.app
+```
+
+Use **Start**, then **Copy ChatGPT Setup** from the menu-bar app. The detailed OAuth and Cloudflare setup is in [Connecting to ChatGPT](#connecting-to-chatgpt) and [DEPLOY.md](DEPLOY.md).
+
+Workspace users who have access to OpenAI Secure MCP Tunnel can use `install.sh` instead. See [Transports](#transports).
+
+Want to see what to ask it to do? Start with the [copy-paste workflows](examples/README.md).
+
+If this is useful, star the repo so other developers can find it. If you build something interesting with it, share the workflow in [Discussions](https://github.com/alexanderradahl/mac-developer-bridge/discussions).
 
 This is an independent open-source project and is not an official OpenAI or Cloudflare product. OpenAI, ChatGPT, Codex, and Cloudflare are trademarks of their respective owners.
 
