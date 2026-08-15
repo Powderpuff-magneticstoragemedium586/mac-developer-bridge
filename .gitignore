@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Generated application bundle
+MacDevBridge.app/
+
+# Node/editor artifacts
+node_modules/
+.idea/
+*.swp
+*.tmp
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+oauth-state.json
+FULL_ACCESS_ENABLED
+http-token
+
+# Runtime output
+*.log
+*.pid

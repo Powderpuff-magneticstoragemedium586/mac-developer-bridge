@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.openai.mac-developer-bridge-tunnel</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>__INSTALL_DIR__/scripts/run-tunnel.sh</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <dict>
+    <key>SuccessfulExit</key>
+    <false/>
+  </dict>
+  <key>ProcessType</key>
+  <string>Interactive</string>
+  <key>ThrottleInterval</key>
+  <integer>10</integer>
+  <key>WorkingDirectory</key>
+  <string>__HOME__</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>HOME</key>
+    <string>__HOME__</string>
+    <key>PATH</key>
+    <string>__PATH__</string>
+    <key>MAC_DEV_BRIDGE_INSTALL_DIR</key>
+    <string>__INSTALL_DIR__</string>
+    <key>MAC_DEV_BRIDGE_PROFILE</key>
+    <string>__PROFILE__</string>
+    <key>MAC_DEV_BRIDGE_DATA_DIR</key>
+    <string>__DATA_DIR__</string>
+    <key>MAC_DEV_BRIDGE_LOG_DIR</key>
+    <string>__LOG_DIR__</string>
+    <key>MAC_DEV_BRIDGE_UNLOCK_FILE</key>
+    <string>__UNLOCK_FILE__</string>
+    <key>MAC_DEV_BRIDGE_AUDIT_MODE</key>
+    <string>__AUDIT_MODE__</string>
+    <key>MAC_DEV_BRIDGE_SHELL</key>
+    <string>__BRIDGE_SHELL__</string>
+    <key>MAC_DEV_BRIDGE_KEYCHAIN_SERVICE</key>
+    <string>__KEYCHAIN_SERVICE__</string>
+    <key>MAC_DEV_BRIDGE_KEYCHAIN_ACCOUNT</key>
+    <string>__KEYCHAIN_ACCOUNT__</string>
+    <key>TUNNEL_CLIENT_BIN</key>
+    <string>__TUNNEL_CLIENT_BIN__</string>
+    <key>CODEX_BIN</key>
+    <string>__CODEX_BIN__</string>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>__LOG_DIR__/tunnel.stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>__LOG_DIR__/tunnel.stderr.log</string>
+</dict>
+</plist>
