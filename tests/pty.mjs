@@ -1378,7 +1378,11 @@ await runCase("a killed bridge lets the helper sweep the terminal itself", async
   process.kill(bridge.child.pid, "SIGKILL");
   try {
     await poll(async () => (await stillRunning(backgroundPid, backgroundCommand)) ? null : true,
-      { attempts: 80, delayMs: 100, label: "the helper to reclaim the job after the bridge was killed" });
+      // The helper's fail-closed path can legitimately spend up to ~6 s in two
+      // bounded ps scans plus the leader's graceful-exit window. Eight seconds
+      // was enough on a developer Mac but proved too tight on a loaded hosted
+      // macOS runner, where the safety path was still progressing normally.
+      { attempts: 200, delayMs: 100, label: "the helper to reclaim the job after the bridge was killed" });
   } finally {
     if (await stillRunning(backgroundPid, backgroundCommand)) {
       try { process.kill(backgroundPid, "SIGKILL"); } catch {}
