@@ -58,7 +58,7 @@ Workspace users who have access to OpenAI Secure MCP Tunnel can use `install.sh`
 
 Want to see what to ask it to do? Start with the [copy-paste workflows](examples/README.md).
 
-If this is useful, star the repo so other developers can find it. If you build something interesting with it, share the workflow in [Discussions](https://github.com/alexanderradahl/mac-developer-bridge/discussions).
+If this is useful, star the repo so other developers can find it. If you build something interesting with it, share the exact workflow in [What are you making ChatGPT do on your Mac?](https://github.com/alexanderradahl/mac-developer-bridge/discussions/3).
 
 This is an independent open-source project and is not an official OpenAI or Cloudflare product. OpenAI, ChatGPT, Codex, and Cloudflare are trademarks of their respective owners.
 
