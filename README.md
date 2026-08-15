@@ -7,6 +7,8 @@
 
 Mac Developer Bridge turns a ChatGPT conversation into the reasoning layer for your actual Mac. It can run shell commands, edit files, start interactive terminal sessions, manage long-running jobs, and read stored Codex threads without starting another Codex model turn.
 
+![Mac Developer Bridge showing ChatGPT reasoning through MCP into shell, PTY sessions, Codex history, and a live Mac](docs/assets/mac-developer-bridge-workflow.png)
+
 > **Example:** “Find the Codex session I was working on yesterday, inspect the live repo, fix CI, push the result, and tell me what changed.”
 
 That is the kind of workflow this project is built for.
